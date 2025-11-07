@@ -93,6 +93,89 @@
         </section>
     </div>
 
+
+    <!-- Ribbons Section -->
+
+    <section id="ribbons" class="ribbons-section">
+
+  <!-- First Ribbon: Programming Languages -->
+  <div class="ribbon ribbon-yellow">
+    <div class="ribbon-track">
+      <div class="ribbon-content">
+        <img src="images/java.png" alt="Java">
+        <img src="images/python.png" alt="Python">
+        <img src="images/typescript.png" alt="TypeScript">
+        <img src="images/scala.png" alt="Scala">
+        <img src="images/reactjs.jpg" alt="ReactJS">
+        <img src="images/redux.png" alt="Redux">
+        <img src="images/angular.png" alt="Angular">
+        <img src="images/vuejs.png" alt="VueJS">
+        <img src="images/nodejs.png" alt="NodeJS">
+        <img src="images/php.png" alt="PHP">
+        <img src="images/laravel.png" alt="Laravel">
+        <img src="images/ror.png" alt="Rails">
+        <img src="images/devops.png" alt="DevOps">
+        <img src="images/aws.png" alt="AWS">
+        <img src="images/salesforce.png" alt="Salesforce">
+        <img src="images/bigdata.png" alt="Big Data">
+      </div>
+      <div class="ribbon-content duplicate">
+        <!-- Duplicate for smooth infinite loop -->
+        <img src="images/java.png" alt="Java">
+        <img src="images/python.png" alt="Python">
+        <img src="images/typescript.png" alt="TypeScript">
+        <img src="images/scala.png" alt="Scala">
+        <img src="images/reactjs.jpg" alt="ReactJS">
+        <img src="images/redux.png" alt="Redux">
+        <img src="images/angular.png" alt="Angular">
+        <img src="images/vuejs.png" alt="VueJS">
+        <img src="images/nodejs.png" alt="NodeJS">
+        <img src="images/php.png" alt="PHP">
+        <img src="images/laravel.png" alt="Laravel">
+        <img src="images/ror.png" alt="Rails">
+        <img src="images/devops.png" alt="DevOps">
+        <img src="images/aws.png" alt="AWS">
+        <img src="images/salesforce.png" alt="Salesforce">
+        <img src="images/bigdata.png" alt="Big Data">
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Ribbon: Companies -->
+  <div class="ribbon ribbon-teal">
+    <div class="ribbon-track reverse">
+      <div class="ribbon-content">
+        <img src="images/tbb/newg.png" alt="Google">
+        <img src="images/tbb/Centene-Corporation.png" alt="Centene">
+        <img src="images/tbb/IBM_logo.svg.svg" alt="IBM">
+        <img src="images/tbb/verizon.svg" alt="Verizon">
+        <img src="images/tbb/microsoft.svg" alt="Microsoft">
+        <img src="images/tbb/Amazon_logo.svg.svg" alt="Amazon">
+        <img src="images/tbb/rakuten.png" alt="Rakuten">
+        <img src="images/tbb/zoom.png" alt="Zoom">
+        <img src="images/tbb/coinbase.png" alt="Coinbase">
+        <img src="images/tbb/airbnb.svg" alt="Airbnb">
+      </div>
+      <div class="ribbon-content duplicate">
+        <!-- Duplicate for infinite scroll -->
+        <img src="images/tbb/newg.png" alt="Google">
+        <img src="images/tbb/Centene-Corporation.png" alt="Centene">
+        <img src="images/tbb/IBM_logo.svg.svg" alt="IBM">
+        <img src="images/tbb/verizon.svg" alt="Verizon">
+        <img src="images/tbb/microsoft.svg" alt="Microsoft">
+        <img src="images/tbb/Amazon_logo.svg.svg" alt="Amazon">
+        <img src="images/tbb/rakuten.png" alt="Rakuten">
+        <img src="images/tbb/zoom.png" alt="Zoom">
+        <img src="images/tbb/coinbase.png" alt="Coinbase">
+        <img src="images/tbb/airbnb.svg" alt="Airbnb">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  
+
     <!-- Section 2 -->
     <section class="features">
         <div class="container">
@@ -437,44 +520,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        const accordions = document.querySelectorAll(".accordion-title");
-
-        accordions.forEach(btn => {
-            btn.addEventListener("click", () => {
-                const item = btn.parentElement;
-                const allItems = document.querySelectorAll(".accordion-item");
-
-                // If already active → close it
-                if (item.classList.contains("active")) {
-                    item.classList.remove("active");
-                } else {
-                    // Close all first
-                    allItems.forEach(el => el.classList.remove("active"));
-                    // Then open the clicked one
-                    item.classList.add("active");
-                }
-            });
-        });
-        window.addEventListener("scroll", function () {
-            const header = document.querySelector("header"); // your header element
-            if (window.scrollY > 600) { // distance in px before color change
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-            const navToggle = document.getElementById("navToggle");
-            const navMenu = document.getElementById("mainNav");
-
-            navToggle.addEventListener("click", function () {
-                navMenu.classList.toggle("open"); // adds/removes .open class
-                document.body.classList.toggle("no-scroll");
-            });
-        });
-    </script>
-    
+   
 </body>
 
 </html>

@@ -222,7 +222,7 @@ body {
 
 .logo-text {
     font-family: "Poppins", sans-serif;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 700;
     color: #0073e6;
     /* pick your brand color */
@@ -239,7 +239,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 20px;
+    /* padding: 12px 20px; */
 }
 
 
@@ -255,6 +255,7 @@ body {
     color: #ffffff;
     font-weight: 500;
     transition: color 0.3s;
+    font-size: 14px;
 }
 
 /* When scrolled */
@@ -1600,5 +1601,160 @@ body {
 
   .vertical-video {
     max-width: 300px;
+  }
+}
+
+
+/* ribbon section */
+
+/* ======= ribbons.css ======= */
+
+/* Section wrapper (centered area) */
+#ribbons {
+  background: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  height: 290px;             /* overall area height (adjust if needed) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20px;
+}
+
+/* Shared ribbon base */
+.ribbon {
+  position: absolute;
+  width: 220%;               /* long strip so content can flow */
+  left: -60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+  opacity: 0.98;
+  pointer-events: none;      /* prevents accidental hover on ribbon background */
+}
+
+/* Languages ribbon (yellow) and Companies ribbon (teal)
+   — small tilt for near-parallel crossing */
+.ribbon-yellow {             /* use this if your HTML class is ribbon-yellow */
+  background: #FFD600;
+  transform: rotate(-8deg);
+  top: 38%;        /* slightly above center */
+  z-index: 2;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+  padding: 6px 0;
+}
+
+.ribbon-teal {               /* use this if your HTML class is ribbon-teal */
+  background: #009688;
+  transform: rotate(8deg);
+  top: 38%;                /* slightly below center */
+  z-index: 1;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+  padding: 6px 0;
+}
+
+/* Scrolling track (holds the two duplicate content blocks) */
+.ribbon-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 10s linear infinite;
+  will-change: transform;
+}
+
+.ribbon-track.reverse {
+  animation: scroll-right 10s linear infinite;
+}
+
+/* Content block (one repeated block). Must be duplicated in HTML */
+.ribbon-content {
+  display: flex;
+  align-items: center;
+  gap: 32px;            /* spacing between logos */
+  padding: 10px 28px;
+  flex-shrink: 0;       /* keep width consistent so duplicates line up */
+}
+
+/* Keep duplicate block directly after first with no extra gap */
+.ribbon-content.duplicate {
+  margin-left: 0;
+}
+
+/* Logos — preserve original colors */
+.ribbon-content img {
+  height: 40px;         /* default logo height */
+  width: auto;
+  object-fit: contain;
+  filter: none;         /* keep original colors */
+  transition: transform 0.18s ease;
+  display: block;
+  pointer-events: auto; /* allow hover on logos */
+}
+
+.ribbon-content img:hover {
+  transform: scale(1.08);
+}
+
+/* Seamless looping keyframes (scroll exactly 50% so duplicate meets) */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-20%); }
+}
+@keyframes scroll-right {
+  0%   { transform: translateX(-20%); }
+  100% { transform: translateX(0); }
+}
+
+/* --------------------
+   Responsive adjustments
+   -------------------- */
+
+@media (max-width: 1200px) {
+  #ribbons { height: 240px; }
+  .ribbon-content img { height: 36px; }
+  .ribbon-content { gap: 28px; padding: 8px 22px; }
+  .ribbon-yellow { transform: rotate(-9deg); top: 45.5%; }
+  .ribbon-teal   { transform: rotate(9deg);  top: 54.5%; }
+}
+
+@media (max-width: 992px) {
+  #ribbons { height: 220px; }
+  .ribbon { width: 240%; left: -70%; }
+  .ribbon-content img { height: 34px; }
+  .ribbon-content { gap: 24px; padding: 8px 18px; }
+  .ribbon-yellow { transform: rotate(-10deg); top: 45%; }
+  .ribbon-teal   { transform: rotate(10deg);  top: 55%; }
+  .ribbon-track { animation-duration: 36s; } /* slower on smaller screens */
+  .ribbon-track.reverse { animation-duration: 36s; }
+}
+
+@media (max-width: 768px) {
+  #ribbons { height: 200px; }
+  .ribbon { width: 270%; left: -85%; }
+  .ribbon-content img { height: 30px; }
+  .ribbon-content { gap: 20px; padding: 6px 12px; }
+  .ribbon-yellow { transform: rotate(-11deg); top: 40%; }
+  .ribbon-teal   { transform: rotate(11deg);  top:40%; }
+  .ribbon-track { animation-duration: 40s; }
+  .ribbon-track.reverse { animation-duration: 40s; }
+}
+
+@media (max-width: 480px) {
+  #ribbons { height: 125px; padding: 0 8px; }
+  .ribbon { width: 320%; left: -98%; }
+  .ribbon-content img { height: 24px; }
+  .ribbon-content { gap: 14px; padding: 6px 8px; }
+  .ribbon-yellow { transform: rotate(-12deg); top: 25%; }
+  .ribbon-teal   { transform: rotate(12deg);  top: 38%; }
+  .ribbon-track { animation-duration: 48s; }
+  .ribbon-track.reverse { animation-duration: 48s; }
+}
+
+/* small accessibility: pause animation on reduce-motion */
+@media (prefers-reduced-motion: reduce) {
+  .ribbon-track,
+  .ribbon-track.reverse {
+    animation: none;
   }
 }
