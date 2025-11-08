@@ -224,7 +224,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: #0073e6;
+    color: #3AE20A;
     /* pick your brand color */
     letter-spacing: 1px;
 }
@@ -233,16 +233,108 @@ body {
     text-decoration: none;
 }
 
+/* ===== Base Container ===== */
+/* ===== Base ===== */
 .container {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* padding: 12px 20px; */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
+.nav-menu ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
 
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* ===== Hide nav toggle button on desktop ===== */
+.nav-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== Laptops / Smaller Desktops (≤1200px) ===== */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+    padding: 20px 30px;
+  }
+}
+
+/* ===== Tablets (≤768px) ===== */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* hide full nav menu */
+  }
+
+  .btn {
+    display: none; /* hide Drop Us a Message */
+  }
+
+  .nav-toggle {
+    display: block; /* show hamburger */
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+}
+
+/* ===== Mobiles (≤480px) ===== */
+@media (max-width: 480px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .container {
+    padding: 10px 15px;
+  }
+}
+
+/* ------------container end ----  */
 
 .nav-menu ul {
     list-style: none;
@@ -252,10 +344,10 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     font-weight: 500;
     transition: color 0.3s;
-    font-size: 14px;
+    font-size: large;
 }
 
 /* When scrolled */
@@ -1258,52 +1350,156 @@ body {
 
 /* Footer */
 
+
+/* ===========================
+   Footer Styling
+=========================== */
 .site-footer {
-    /* margin: 30px; */
-    padding: 40px 20px;
-    text-align: center;
-    border: 1px solid #333;
-    background-color: #f9f9f9;
+  background: #f9f9f9;
+  color: #222;
+  font-family: "Poppins", sans-serif;
+  padding: 50px 30px 20px;
+}
+
+/* ---------- Top Row ---------- */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo .logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
 }
 
 .footer-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 30px;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-nav a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #333;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s;
 }
 
 .footer-nav a:hover {
-    color: #0073e6;
+  color: #0078ff;
 }
 
-.footer-info {
-    display: flex;
+/* Divider */
+.site-footer hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 25px 0;
+}
+
+/* ---------- Bottom Row ---------- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: #333;
+  font-size: 18px;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #0078ff;
+}
+
+.footer-contact p,
+.footer-address p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.footer-contact i,
+.footer-address i {
+  color: #0078ff;
+  margin-right: 8px;
+}
+
+/* ---------- Copyright ---------- */
+.copyright {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+/* Tablets (≤ 1024 px) */
+@media (max-width: 1024px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-nav ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 400px;
-    margin-top: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
-.footer-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 24px;
+/* Mobiles (≤ 768 px) */
+@media (max-width: 768px) {
+  .footer-nav ul {
+    gap: 15px;
+  }
+
+  .footer-social a {
+    font-size: 16px;
+    margin: 0 10px;
+  }
 }
 
-.footer-item i {
-    color: #0073e6;
-    font-size: 18px;
+/* Small Mobiles (≤ 480 px) */
+@media (max-width: 480px) {
+  .footer-logo .logo-text {
+    font-size: 20px;
+  }
+
+  .footer-nav a {
+    font-size: 14px;
+  }
+
+  .footer-contact p,
+  .footer-address p {
+    font-size: 14px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
 }
+
+
+
 
 
 /* ---------- Responsive Header ---------- */
@@ -1428,7 +1624,7 @@ body {
 }
 
 /* ---------- Responsive Footer ---------- */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     .footer-info {
         flex-direction: column;
         gap: 10px;
@@ -1445,7 +1641,7 @@ body {
         gap: 15px;
         font-size: 14px;
     }
-}
+} */
 
 
 /* -----------------------  frustrations Section ----------------------- */
@@ -1555,7 +1751,7 @@ body {
 }
 
 .welcome-banner h2 span {
-  color: #007BFF; /* Blue highlight for Algorithra.AI */
+  color: #3AE20A; /* Blue highlight for Algorithra.AI */
   font-weight: 600;
 }
 
@@ -1647,154 +1843,182 @@ body {
 
 /* ribbon section */
 
-/* ======= ribbons.css ======= */
 
-/* Section wrapper (centered area) */
-#ribbons {
-  background: #f9f9f9;
+/* =============== GLOBAL STYLES =============== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+}
+
+.ribbons-section {
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+/* =============== PROGRAMMING LANGUAGES =============== */
+#programming-languages {
+  background-color: #f9f9f9;
+  padding: 0px;
+}
+
+#programming-languages .ribbon {
+  background-color: #f9f9f9;
+  border-top: 2px solid #f9f9f9;
+  border-bottom: 2px solid #f9f9f9;
+  margin: 20px 0;
+  overflow: hidden;
   position: relative;
-  overflow: hidden;
-  height: 290px;             /* overall area height (adjust if needed) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 20px;
 }
 
-/* Shared ribbon base */
-.ribbon {
-  position: absolute;
-  width: 220%;               /* long strip so content can flow */
-  left: -60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 6px;
-  opacity: 0.98;
-  pointer-events: none;      /* prevents accidental hover on ribbon background */
-}
-
-/* Languages ribbon (yellow) and Companies ribbon (teal)
-   — small tilt for near-parallel crossing */
-.ribbon-yellow {             /* use this if your HTML class is ribbon-yellow */
-  background: #FFD600;
-  transform: rotate(-8deg);
-  top: 38%;        /* slightly above center */
-  z-index: 2;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-  padding: 6px 0;
-}
-
-.ribbon-teal {               /* use this if your HTML class is ribbon-teal */
-  background: #009688;
-  transform: rotate(8deg);
-  top: 38%;                /* slightly below center */
-  z-index: 1;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.10);
-  padding: 6px 0;
-}
-
-/* Scrolling track (holds the two duplicate content blocks) */
-.ribbon-track {
+#programming-languages .ribbon-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 10s linear infinite;
-  will-change: transform;
+  animation: scroll-right-langs 25s linear infinite;
 }
 
-.ribbon-track.reverse {
-  animation: scroll-right 10s linear infinite;
-}
-
-/* Content block (one repeated block). Must be duplicated in HTML */
-.ribbon-content {
+#programming-languages .ribbon-content {
   display: flex;
   align-items: center;
-  gap: 32px;            /* spacing between logos */
-  padding: 10px 28px;
-  flex-shrink: 0;       /* keep width consistent so duplicates line up */
+  gap: 40px;
+  padding-right: 80px;
 }
 
-/* Keep duplicate block directly after first with no extra gap */
-.ribbon-content.duplicate {
-  margin-left: 0;
-}
-
-/* Logos — preserve original colors */
-.ribbon-content img {
-  height: 40px;         /* default logo height */
+#programming-languages img {
+  height: 60px;
   width: auto;
   object-fit: contain;
-  filter: none;         /* keep original colors */
-  transition: transform 0.18s ease;
-  display: block;
-  pointer-events: auto; /* allow hover on logos */
+  transition: transform 0.3s ease;
 }
 
-.ribbon-content img:hover {
-  transform: scale(1.08);
+#programming-languages img:hover {
+  transform: scale(1.1);
 }
 
-/* Seamless looping keyframes (scroll exactly 50% so duplicate meets) */
-@keyframes scroll-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-20%); }
-}
-@keyframes scroll-right {
-  0%   { transform: translateX(-20%); }
-  100% { transform: translateX(0); }
+/* =============== COMPANIES =============== */
+#companies {
+  background-color: #f9f9f9;
+  padding: 0px;
 }
 
-/* --------------------
-   Responsive adjustments
-   -------------------- */
-
-@media (max-width: 1200px) {
-  #ribbons { height: 240px; }
-  .ribbon-content img { height: 36px; }
-  .ribbon-content { gap: 28px; padding: 8px 22px; }
-  .ribbon-yellow { transform: rotate(-9deg); top: 45.5%; }
-  .ribbon-teal   { transform: rotate(9deg);  top: 54.5%; }
+#companies .ribbon {
+  background-color: #f9f9f9;
+  border-top: 2px solid #f9f9f9;
+  border-bottom: 2px solid #f9f9f9;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
 }
 
-@media (max-width: 992px) {
-  #ribbons { height: 220px; }
-  .ribbon { width: 240%; left: -70%; }
-  .ribbon-content img { height: 34px; }
-  .ribbon-content { gap: 24px; padding: 8px 18px; }
-  .ribbon-yellow { transform: rotate(-10deg); top: 45%; }
-  .ribbon-teal   { transform: rotate(10deg);  top: 55%; }
-  .ribbon-track { animation-duration: 36s; } /* slower on smaller screens */
-  .ribbon-track.reverse { animation-duration: 36s; }
+#companies .ribbon-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-right-companies 25s linear infinite;
 }
 
-@media (max-width: 768px) {
-  #ribbons { height: 200px; }
-  .ribbon { width: 270%; left: -85%; }
-  .ribbon-content img { height: 30px; }
-  .ribbon-content { gap: 20px; padding: 6px 12px; }
-  .ribbon-yellow { transform: rotate(-11deg); top: 40%; }
-  .ribbon-teal   { transform: rotate(11deg);  top:40%; }
-  .ribbon-track { animation-duration: 25s; }
-  .ribbon-track.reverse { animation-duration: 25s; }
+#companies .ribbon-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding-right: 80px;
 }
 
-@media (max-width: 480px) {
-  #ribbons { height: 125px; padding: 0 8px; }
-  .ribbon { width: 320%; left: -98%; }
-  .ribbon-content img { height: 24px; }
-  .ribbon-content { gap: 14px; padding: 6px 8px; }
-  .ribbon-yellow { transform: rotate(-12deg); top: 25%;}
-  .ribbon-teal   { transform: rotate(12deg);  top: 38%; }
-  .ribbon-track { animation-duration: 20s; }
-  .ribbon-track.reverse { animation-duration: 20s; }
+#companies img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* small accessibility: pause animation on reduce-motion */
-@media (prefers-reduced-motion: reduce) {
-  .ribbon-track,
-  .ribbon-track.reverse {
-    animation: none;
+#companies img:hover {
+  transform: scale(1.1);
+}
+
+/* =============== ANIMATIONS =============== */
+@keyframes scroll-right-langs {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
+
+@keyframes scroll-right-companies {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* =============== RESPONSIVE BREAKPOINTS =============== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  #programming-languages img,
+  #companies img {
+    height: 50px;
+  }
+
+  #programming-languages .ribbon-content,
+  #companies .ribbon-content {
+    gap: 30px;
+  }
+}
+
+/* Large Mobile (480px - 768px) */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  #programming-languages img,
+  #companies img {
+    height: 40px;
+  }
+
+  #programming-languages .ribbon-content,
+  #companies .ribbon-content {
+    gap: 20px;
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  #programming-languages img,
+  #companies img {
+    height: 32px;
+  }
+
+  #programming-languages .ribbon-content,
+  #companies .ribbon-content {
+    gap: 15px;
+  }
+
+  #programming-languages,
+  #companies {
+    padding: 40px 10px;
+  }
+}
+
+
+
+
