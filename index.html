@@ -589,10 +589,20 @@
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');
 
+  // Toggle menu open/close on hamburger click
   navToggle.addEventListener('click', () => {
     mainNav.classList.toggle('active');
   });
+
+  // Automatically close menu when any nav link is clicked
+  const navLinks = document.querySelectorAll('#mainNav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('active');
+    });
+  });
 </script>
+
 
 
 
