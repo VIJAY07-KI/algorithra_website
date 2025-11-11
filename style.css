@@ -1,17 +1,6 @@
 body.no-scroll {
     overflow: hidden;
 }
-.expertise-section,
-.why-section,
-.trusted-section,
-.form-section,
-.site-footer,
-.section-3,
-.frustrations,
-.features {
-  background:  linear-gradient(135deg, #a1c4fd, #c2e9fb, #fbc2eb);
-}
-
 
 .poppins-thin {
     font-family: "Poppins", sans-serif;
@@ -593,10 +582,8 @@ body {
 /* Section */
 
 .features {
-    border: 1px solid transparent;
-    border-radius: 30px;
-    margin: 30px 30px;
-    padding: 50px 20px;
+   
+    padding: 20px 20px;
 }
 
 .features .container {
@@ -608,7 +595,7 @@ body {
 }
 
 .feature {
-    background: lightgoldenrodyellow;
+    background:white;
     padding: 30px 20px;
     text-align: center;
     border-radius: 10px;
@@ -670,7 +657,6 @@ body {
     font-size: 40px;
     font-weight: bold;
     padding: 0 220px;
-    margin-bottom: 30px;
     color: #333;
 }
 
@@ -800,10 +786,9 @@ body {
 
 /* Section 3 Styles */
 .section-3 {
-    border: 1px solid transparent;
-    border-radius: 30px;
+    
     padding: 50px 20px;
-    margin: 30px 30px;
+    
     line-height: 1.6;
     color: #333;
     
@@ -884,9 +869,7 @@ body {
 
 /* WHY   Section */
 .why-section {
-   border: 1px solid transparent;
-  border-radius: 30px;
-  margin: 30px 30px;
+   
     
     padding: 50px 20px;
     text-align: center;
@@ -916,7 +899,7 @@ body {
 
 /* Cards */
 .why-card {
-    background:lightgoldenrodyellow;
+    background:white;
     padding: 30px 20px;
     border-radius: 10px;
     flex: 1 1 calc(33.333% - 30px);
@@ -979,9 +962,7 @@ body {
 /* Trusted By Section */
 
 .trusted-section {
-  border: 1px solid transparent;
-  border-radius: 30px;
-  margin: 30px 30px;
+  
   padding: 50px 20px;
   
   text-align: center;
@@ -1098,7 +1079,7 @@ body {
 
 .expertise-block {
     flex: 1;
-    background:lightgoldenrodyellow;
+    background:#f9f9f9;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     padding: 25px;
@@ -1141,9 +1122,7 @@ body {
 
 /* Section Styling */
 .expertise-section {
-  border: 1px solid transparent;
-  border-radius: 30px;
-  margin: 30px 30px;
+  
     padding: 50px 20px;
     text-align: center;
     
@@ -1448,6 +1427,8 @@ body {
 =========================== */
 /* ============== FOOTER BASE ============== */
 .site-footer {
+
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #fbc2eb);
 
   color: #222;
   font-family: "Poppins", sans-serif;
@@ -1967,9 +1948,6 @@ body {
 /* Container Layout */
 .form-section {
   padding: 80px 0;
-  border:1px solid transparent;
-  margin: 30px 30px;
-  border-radius: 30px;
 }
 
 .container-form {
@@ -2043,7 +2021,7 @@ body {
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: white;
+  background: #f9f9f9;
 
 }
 
@@ -2063,15 +2041,14 @@ body {
 
 /* =============== PROGRAMMING LANGUAGES =============== */
 #programming-languages {
-  background: linear-gradient(135deg, #fffbe6, #fff176, #ffe082);
+  background:#f9f9f9;
   padding: 0;
   margin-top: 30px;
 }
 
 #programming-languages .ribbon {
-  background: linear-gradient(135deg, #fff59d, #ffeb3b, #fdd835);
-  border-top: 0px solid gold;
-  border-bottom: 0px solid #ffeb3b;
+  background: #f9f9f9;
+  
   overflow: hidden;
   position: relative;
 }
@@ -2102,15 +2079,14 @@ body {
 
 /* =============== COMPANIES =============== */
 #companies {
-  background: linear-gradient(135deg, #fff59d, #ffeb3b, #fdd835);
+  background: #f9f9f9;
   padding: 0;
-  margin-bottom: 30px;
+ 
 }
 
 #companies .ribbon {
-  background: linear-gradient(135deg, #fff59d, #ffeb3b, #fdd835);
-  border-top: 0px solid #00796b;
-  border-bottom: 0px solid #004d40;
+  background: #f9f9f9;
+  
   margin: 20px 0;
   overflow: hidden;
   position: relative;
