@@ -608,7 +608,7 @@ body {
 }
 
 .feature {
-    background: #fff;
+    background: lightgoldenrodyellow;
     padding: 30px 20px;
     text-align: center;
     border-radius: 10px;
@@ -916,7 +916,7 @@ body {
 
 /* Cards */
 .why-card {
-    background: #fff;
+    background:lightgoldenrodyellow;
     padding: 30px 20px;
     border-radius: 10px;
     flex: 1 1 calc(33.333% - 30px);
@@ -1098,7 +1098,7 @@ body {
 
 .expertise-block {
     flex: 1;
-    background: #f6f8ff;
+    background:lightgoldenrodyellow;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     padding: 25px;
