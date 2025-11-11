@@ -609,23 +609,42 @@
 
 
 <script>
-  const navToggle = document.getElementById('navToggle');
-  const mainNav = document.getElementById('mainNav');
+  document.addEventListener("DOMContentLoaded", () => {
+    /* 🔹 Navbar Toggle */
+    const navToggle = document.getElementById("navToggle");
+    const mainNav = document.getElementById("mainNav");
 
-  // Toggle menu open/close on hamburger click
-  navToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-  });
+    if (navToggle && mainNav) {
+      navToggle.addEventListener("click", () => {
+        mainNav.classList.toggle("active");
+      });
 
-  // Automatically close menu when any nav link is clicked
-  const navLinks = document.querySelectorAll('#mainNav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('active');
+      const navLinks = document.querySelectorAll("#mainNav a");
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("active");
+        });
+      });
+    }
+
+    /* 🔹 Accordion Toggle */
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach(item => {
+      const title = item.querySelector(".accordion-title");
+      if (title) {
+        title.addEventListener("click", () => {
+          // Close all open accordions except this one
+          accordionItems.forEach(i => {
+            if (i !== item) i.classList.remove("active");
+          });
+          // Toggle current accordion
+          item.classList.toggle("active");
+        });
+      }
     });
   });
 </script>
-
 
 
 
