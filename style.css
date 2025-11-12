@@ -1728,6 +1728,20 @@ body {
     }
 }
 
+@media (max-width: 480px) {
+  .section-3 .content {
+    flex-direction: column;
+    align-items: center;      /* centers blocks horizontally */
+    justify-content: center;  /* centers vertically if needed */
+    text-align: center;       /* centers text inside */
+  }
+
+  .section-3 .content > * {
+    margin: 10px 0; /* optional spacing between stacked elements */
+  }
+}
+
+
 /* ---------- Responsive Logo Grid ---------- */
 @media (max-width: 1200px) {
     .logo-grid {
