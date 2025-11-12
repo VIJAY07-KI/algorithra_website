@@ -354,6 +354,7 @@ body {
 
   .btn {
     display: none;
+    font-size: 11px;
   }
 
   .nav-toggle {
@@ -2007,6 +2008,20 @@ body {
 
   .left, .right {
     width: 100%;
+  }
+
+  .vertical-video {
+    max-width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .container-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left, .right {
+    width: 84%;
   }
 
   .vertical-video {
